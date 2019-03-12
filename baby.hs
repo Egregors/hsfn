@@ -27,7 +27,7 @@ cat = 'a':" small cat"
 
 -- !! get by index
 lst = [1, 2, 3, 4, 5]
-lst2 = l !! 1 -- l2 == 2
+lst2 = l !! 1 -- 2
 
 -- other funcs for lists
 l = [5, 4, 3, 2, 1]
@@ -136,4 +136,3 @@ fruts = zip [1..] ["orange", "apple", "banana", "mango"]
 -- triangles promlem (example)
 -- get all right triangles for side sizes 1..10 and perimetr == 24
 triangles = [ (x, y, z) | x <- [1..10], y <- [1..10], z <- [1..10], x^2 + y^2 == z^2, x+y+z == 24 ] -- [(6,8,10),(8,6,10)]
-
