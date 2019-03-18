@@ -15,3 +15,6 @@ circumference r = 2 * pi * r
 
 circumference' :: Double -> Double
 circumference' r = 2 * pi * r
+
+-- ghci> :t head  
+-- head :: [a] -> a  
