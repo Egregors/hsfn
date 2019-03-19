@@ -75,3 +75,16 @@ bmiTell' weight height
     skinny = 18.5
     normal = 25.0
     fat = 30.0
+
+--
+initials :: String -> String -> String
+initials first last = [f] ++ ". " ++ [l]
+  where
+    (f:_) = first
+    (l:_) = last
+
+calcBmis :: (RealFloat a) => [(a, a)] -> [a]
+calcBmis xs = [bmi w h | (w, h) <- xs]
+  where
+    bmi weight height = weight / height ^ 2
+
