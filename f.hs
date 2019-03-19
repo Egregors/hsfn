@@ -90,10 +90,30 @@ calcBmis xs = [bmi w h | (w, h) <- xs]
 
 -- cylinder surface
 -- let <bindings> in <expression>.
--- [let square x = x * x in (square 5, square 3, square 2)]  
--- (let a = 100; b = 200; c = 300 in a*b*c, let foo="Hey "; bar = "there!" in foo ++ bar)  
+-- [let square x = x * x in (square 5, square 3, square 2)]
+-- (let a = 100; b = 200; c = 300 in a*b*c, let foo="Hey "; bar = "there!" in foo ++ bar)
 cylinder :: (RealFloat a) => a -> a -> a
 cylinder r h =
   let sideArea = 2 * pi * r * h
       topArea = pi * r ^ 2
    in sideArea + 2 * topArea
+
+--  case expression of pattern -> result
+-- pattern -> result
+-- pattern -> result
+-- ...
+describeList :: [a] -> String
+describeList xs =
+  "The list is " ++
+  case xs of
+    []  -> "empty."
+    [x] -> "a singleton list."
+    xs  -> "a longer list."
+
+--
+describeList' :: [a] -> String
+describeList' xs = "The list is " ++ what xs
+  where
+    what []  = "empty."
+    what [x] = "a singleton list."
+    what xs  = "a longer list."
